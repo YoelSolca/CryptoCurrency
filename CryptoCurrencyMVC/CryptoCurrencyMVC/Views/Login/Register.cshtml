@@ -1,0 +1,81 @@
+﻿@model UserModel
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    <div class="card">
+    <h5 class="card-header">Crear usuario</h5>
+      <div class="card-body">
+        <form asp-action="Register" asp.controller="Login" method="post">
+                  <div class="mb-3">
+                        <label class="form-label">Email: </label>
+                        <input asp-for="Email" type="email" class="form-control">
+
+                        <span asp-validation-for="Email" class="text-danger"></span>
+
+                          <label class="form-label">Contraseña: </label>
+                         <input asp-for="Password" type="password" class="form-control">
+
+                          <span asp-validation-for="Password" class="text-danger"></span>
+
+
+
+                           <label class="form-label">Nombre: </label>
+                         <input asp-for="FirstName" type="text" class="form-control">
+
+                          <span asp-validation-for="FirstName" class="text-danger"></span>
+                                                     
+                          
+                          <label class="form-label">Apellido: </label>
+                         <input asp-for="LastName" type="text" class="form-control">
+
+                          <span asp-validation-for="LastName" class="text-danger"></span>
+
+
+                            <label class="form-label">Telefono: </label>
+                         <input asp-for="Phone" type="text" class="form-control">
+
+                          <span asp-validation-for="Phone" class="text-danger"></span>
+
+                         <label class="form-label">Direccion: </label>
+                         <input asp-for="Address" type="text" class="form-control">
+
+                          <span asp-validation-for="Address" class="text-danger"></span>
+
+
+                          <label class="form-label">Genero: </label>
+                         <input asp-for="Gender" type="text" class="form-control">
+
+                          <span asp-validation-for="Gender" class="text-danger"></span>
+
+                           <label class="form-label">Fecha de Nacimiento: </label>
+                         <input asp-for="Birthdate" type="text" class="form-control">
+
+                          <span asp-validation-for="Birthdate" class="text-danger"></span>
+
+
+                          <label class="form-label">Localidad: </label>
+                         <input asp-for="LocationName" type="text" class="form-control">
+
+                          <span asp-validation-for="LocationName" class="text-danger"></span>
+
+
+                     </div>
+
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <a asp-action="Login" asp.controller="Login" class="btn btn-warning">Volver al Login</a>
+        </form>
+     </div>
+</div>
+</body>
+</html>
