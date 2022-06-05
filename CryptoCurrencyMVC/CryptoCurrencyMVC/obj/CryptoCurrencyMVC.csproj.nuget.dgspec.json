@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj": {}
+    "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj": {
+    "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj",
         "projectName": "CryptoCurrencyMVC",
-        "projectPath": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\CryptoCurrencyMVC.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

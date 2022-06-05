@@ -15,5 +15,9 @@ namespace CryptoCurrencyMVC.Models
         [DataType(DataType.Password)]
         public string? Password { get; set; }
 
+        public AccountPesoModel? accountPeso { get; set; }
+        public AccountDollarModel? accountDollar { get; set; }
+        public AccountCryptocurrencyModel? AccountCryptocurrencyModel { get; set; }
+
     }
 }
