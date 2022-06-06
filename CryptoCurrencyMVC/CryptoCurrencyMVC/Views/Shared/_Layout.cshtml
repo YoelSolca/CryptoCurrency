@@ -10,14 +10,31 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CryptoCurrencyMVC.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/dcfddf5262.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
 </head>
 <body>
 
+    <div id="menu-bars" class="fas fa-bars"></div>
+    
+<!-- header section starts  -->
+
+
     <header>
 
+        <h6>Hola Yoel</h6>
+
         <nav class="navbar">
-          <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-          <a  asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                    <a class="bi bi-house" asp-area="" asp-controller="Home" asp-action="Index">Inicio </a>
+                    <a class="bi bi-house" asp-area="" asp-controller="Profile" asp-action="Profile">Tu perfil </a>
+
+                    <a class="bi bi-house" asp-area="" asp-controller="Cryptocurrency" asp-action="List">Criptomonedas</a>
+
+                    <a class="bi bi-house" asp-area="" asp-controller="Home" asp-action="Index">Tu dinero </a>
+                    <a class="bi bi-house" asp-area="" asp-controller="Home" asp-action="Index">Actividad </a>
+
 
          @*   <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
@@ -42,18 +59,25 @@
 
     </header>
 
+        
+    <div class="main">
+            <div class="topbar">
+                   @ViewData["Title"] 
+            </div>
+        </div>
 
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <div class="section">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    @*<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - CryptoCurrencyMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

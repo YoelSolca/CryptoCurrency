@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,6 +37,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Login/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cV2VsY29tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/Deposit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXERlcG9zaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/Transfer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXFRyYW5zZmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Profile/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Shared/Error.cshtml]

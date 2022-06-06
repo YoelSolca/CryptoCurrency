@@ -1,3 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #222;
+   /* display: flex;
+    align-items: center;
+    justify-content: space-between;*/
+    z-index: 1000;
+    flex-flow: column;
+    padding: 0 4rem;
+    width: 15rem;
+    text-align: center;
+}
+
+.navbar{
+    margin-top: 2rem;
+}
+
+
+.card {
+    margin-left: 3rem;
+    width: 22rem !important;
+}
+
+h6{
+    color: #fff;
+    margin-top: 1.5rem;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: right;
+}
+
+.body{
+    height: 18rem !important;
+}
+
+.edicion {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    height: 100vh;
+}
+
+.button {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 17px;
+}
+
+header .navbar a {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    width: 15rem;
+    padding: 6px;
+}
+
+    header .navbar a:hover {
+        color: #c59d5f;
+        background: #f7f7f72b;
+    }
+
 html {
   font-size: 14px;
 }
@@ -15,4 +93,83 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+
+#menu-bars {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000;
+    background: #ccc;
+    color: #fff;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+}
+
+.section {
+    margin-left: 15rem;
+    margin-top: 5rem;
+}
+
+.main .topbar {
+    position: fixed;
+    top: 0;
+    left: 240px;
+    background: #222;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    height: 60px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    width: 82%;
+    color: #fff;
+}
+
+/* media queries  */
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    #menu-bars {
+        display: initial;
+    }
+
+    header {
+        left: -120%;
+    }
+
+        header.active {
+            left: 0%;
+        }
+
+    .cursor-1,
+    .cursor-2 {
+        display: none;
+    }
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .experience .box-container .box {
+        padding-right: 0;
+    }
 }

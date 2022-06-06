@@ -1,0 +1,31 @@
+﻿@model List<CryptocurrencyModel>
+
+@{
+    ViewData["Title"] = "Criptomonedas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cambios en 24h</th>
+      <th scope="col">Volumen en 24h</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach (var item in Model)
+    {
+            <tr>
+                <td><img src="@item.image" width="20"/>@item.symbol @item.name</td>
+
+                <td>@item.current_price.ToString("N1", System.Globalization.CultureInfo.InvariantCulture) US$</td>
+
+                <td>@item.price_change_percentage_24h.ToString("N1", System.Globalization.CultureInfo.InvariantCulture)%</td>
+
+                <td>@item.total_volume.ToString("N1", System.Globalization.CultureInfo.InvariantCulture) US$</td>
+            </tr>
+    }
+  </tbody>
+</table>

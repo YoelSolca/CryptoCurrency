@@ -1612,3 +1612,7 @@ C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurr
 C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC\obj\Debug\net6.0\CryptoCurrencyMVC.pdb
 C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC\obj\Debug\net6.0\CryptoCurrencyMVC.genruntimeconfig.cache
 C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC\obj\Debug\net6.0\ref\CryptoCurrencyMVC.dll
+C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC\bin\Debug\net6.0\System.Web.Http.WebHost.dll
+C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

@@ -1,8 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="container">
+    <div class="row justify-content-sm-around">
+            <div class="col-md-6">
+                <div class="card text-left">
+              <div class="card-body">
+                <h5 class="card-title">Dinero disponible</h5>
+                <p class="card-text">$0,00</p>
+                </div>
+        <div class="button">
+
+
+        <a asp-area="" asp-controller="Operation" asp-action="Deposit" class="btn btn-primary">Ingresar dinero</a>
+        <a asp-area="" asp-controller="Operation" asp-action="Transfer" class="btn btn-primary">Transferir dinero</a>
+        </div>
+      </div>
+    </div>
+
+
+     <div class="col-md-6">
+             <div class="card text-left">
+              <div class="card-header">
+                Tu actividad 
+              </div>
+              <div class="card-body body">
+              </div>
+            </div>
+            </div>
+     </div>
+
+</section>
+
+
+@*<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mb-4 ml-2 mr-2 text-left">
+                <div class="card-body">
+                    <p>blahblahblah</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4 ml-2 mr-2 text-left">
+                <div class="card-body">
+                    <p>blahblahblahblahblahb lahblahblahbl ahblahbla hblahblahblahblahblahbla hblahblahbla hblahblahblahb lahblahblahblahblahblahblahblahbla hblahblahblahblahblahblahb lahblahblahblahblahblahblahblahbl ahblahblahblahblahb lahblahblahblahblahblah</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@

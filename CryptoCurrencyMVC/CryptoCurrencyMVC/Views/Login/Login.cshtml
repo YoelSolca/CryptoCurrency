@@ -10,9 +10,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
+    <link rel="stylesheet" href="~/css/styles.css"/>
 </head>
 <body>
-    <div class="card">
+   
+@*    <div class="card">
     <h5 class="card-header">Inicar session</h5>
       <div class="card-body">
         <form asp-action="Login" asp.controller="Login" method="post">
@@ -32,6 +34,56 @@
               <a asp-action="Register" asp.controller="Login" class="btn btn-warning">Registrarse</a>
         </form>
      </div>
-</div>
+</div>*@
+
+ <div class="container" id="container">
+        <div class="form-container sign-up-container">
+        <form asp-action="Login" asp.controller="Login" method="post">
+                <h1>Create Account</h1>
+
+              <input asp-for="Email" type="email" class="form-control">
+              <span asp-validation-for="Email" class="text-danger"></span>              
+              
+              <input asp-for="Password" type="password" class="form-control">
+               <span asp-validation-for="Password" class="text-danger"></span>
+       
+              <button>Registrarse</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+        <form asp-action="Login" asp.controller="Login" method="post">
+                <h1>Inicio de sesión en Crypto</h1>
+
+             <input class="email" asp-for="Email" type="email" class="form-control">
+              <span asp-validation-for="Email" class="text-danger"></span>              
+              
+              <input asp-for="Password" type="password" class="form-control">
+               <span asp-validation-for="Password" class="text-danger"></span>
+       
+              <button type="submit">Iniciar sesión</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Bienvenido de nuevo!</h1>
+                    <p>Para mantenerse en contacto con nosotros, inicie sesión con sus datos de cuenta</p>
+                    <button class="ghost" id="signIn">Iniciar sesión</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Bienvenido!</h1>
+                    <p>Introduce tus datos personales y empieza a comprar criptomonedas en unos minutoss</p>
+                    <button class="ghost" id="signUp">
+                        Registrarse
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="~/js/script.js"></script>
+
 </body>
 </html>

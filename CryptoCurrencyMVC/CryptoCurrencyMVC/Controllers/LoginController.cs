@@ -10,8 +10,6 @@ namespace CryptoCurrencyMVC.Controllers
     {
         UserData userData = new UserData();
 
-
-
         public ActionResult Register()
         {
             return View();

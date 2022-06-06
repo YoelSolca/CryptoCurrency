@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hCX5VkLtFfuWuByNl6XD3/TNJbkqY3MsKRuEwoXis8Q=",
+  "Hash": "7gmwk3XqGu2v173bu9VhFxi2d62KLN4PY/De3rChxqI=",
   "Source": "CryptoCurrencyMVC",
   "BasePath": "_content/CryptoCurrencyMVC",
   "Mode": "Default",
@@ -68,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\wwwroot\\css\\styles.css",
+      "SourceId": "CryptoCurrencyMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\wwwroot\\",
+      "BasePath": "_content/CryptoCurrencyMVC",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    },
+    {
       "Identity": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\wwwroot\\favicon.ico",
       "SourceId": "CryptoCurrencyMVC",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\wwwroot\\js\\script.js",
+      "SourceId": "CryptoCurrencyMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\wwwroot\\",
+      "BasePath": "_content/CryptoCurrencyMVC",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\CryptoCurrency\\CryptoCurrency\\CryptoCurrencyMVC\\CryptoCurrencyMVC\\wwwroot\\js\\site.js",
