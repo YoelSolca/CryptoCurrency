@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/Comprar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcQ29tcHJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

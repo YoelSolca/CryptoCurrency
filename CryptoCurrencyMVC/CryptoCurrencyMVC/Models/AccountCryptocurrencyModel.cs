@@ -4,7 +4,7 @@
     {
         public int ID { get; set; }
         public Guid UUID { get; set; }
-        public float AccountBalance { get; set; }
+        public double AccountBalance { get; set; }
         public int FK_AccountCryptoCurrency { get; set; }
     }
 }

@@ -51,6 +51,10 @@
               "target": "Package",
               "version": "[5.2.9, )"
             },
+            "Microsoft.AspNet.WebApi.Core": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
             "Microsoft.AspNet.WebApi.WebHost": {
               "target": "Package",
               "version": "[5.2.9, )"

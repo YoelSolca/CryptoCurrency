@@ -42,14 +42,21 @@ namespace CryptoCurrencyMVC.Controllers
         {
             var oUser = userData.ObtenerUsuario(user.Email, user.Password);
 
+
             if(!String.IsNullOrEmpty(oUser.Email) && !String.IsNullOrEmpty(oUser.Password))
             {
+                HttpContext.Session.SetString("email", user.Email);
+                HttpContext.Session.SetString("password", user.Password);
+                HttpContext.Session.SetString("name", oUser.FirstName + " " + oUser.LastName);
+
+
+                ViewBag.AccountPeso = oUser.accountPeso;
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-
-                ViewData["message"] = "Login Details Failed";
+                ViewBag.msg = "Email o contraseña ingresada es incorrecta";
+                return View();
             }
 
             return View();
@@ -58,9 +65,20 @@ namespace CryptoCurrencyMVC.Controllers
         
 
 
-        public ActionResult Welcome(UserModel user)
+        public ActionResult Welcome()
         {
-            return View(user);
+            ViewBag.email = HttpContext.Session.GetString("email");
+
+            return View();
+        }
+
+
+        [Route("logout")]
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Remove("email");
+            HttpContext.Session.Remove("password");
+            return RedirectToAction("Login");
         }
     }
 }

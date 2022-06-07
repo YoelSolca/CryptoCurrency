@@ -128,6 +128,31 @@ namespace CryptoCurrencyMVC.Data
                             oUser.ID = Convert.ToInt32(dr["ID"]);
                             oUser.Email = dr["Email"].ToString();
                             oUser.Password = dr["Password"].ToString();
+                            oUser.FirstName = dr["FirstName"].ToString();
+                            oUser.LastName = dr["LastName"].ToString();
+                            oUser.Phone = dr["Phone"].ToString();
+                            oUser.Address = dr["Address"].ToString();
+                            oUser.Gender = dr["Gender"].ToString();
+                            oUser.LocationName = dr["LocationName"].ToString();
+
+                            oUser.accountPeso = new AccountPesoModel();
+                            oUser.accountPeso.CBU = dr["CBU"].ToString();
+                            oUser.accountPeso.Alias = dr["Alias"].ToString();
+                            oUser.accountPeso.AccountNumber = dr["Alias"].ToString();
+                            oUser.accountPeso.AccountBalance = Convert.ToDouble(dr["accountBalance"]);
+
+                            oUser.accountDollar = new AccountDollarModel();
+                            oUser.accountDollar.CBU = dr["CBU"].ToString();
+                            oUser.accountDollar.Alias = dr["Alias"].ToString();
+                            oUser.accountDollar.AccountNumber = dr["Alias"].ToString();
+                            oUser.accountDollar.AccountBalance = Convert.ToDouble(dr["accountBalance"]);
+
+                            oUser.AccountCryptocurrencyModel = new AccountCryptocurrencyModel();
+                            oUser.AccountCryptocurrencyModel.UUID = Guid.Parse(dr["UUID"].ToString());
+                            oUser.AccountCryptocurrencyModel.AccountBalance = Convert.ToDouble(dr["accountBalance"]);
+
+
+
                         }
                     }
                 }

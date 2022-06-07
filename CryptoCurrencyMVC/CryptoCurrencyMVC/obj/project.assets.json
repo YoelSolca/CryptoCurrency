@@ -9502,6 +9502,7 @@
     "net6.0": [
       "Microsoft.AspNet.Mvc >= 3.0.50813.1",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
+      "Microsoft.AspNet.WebApi.Core >= 5.2.9",
       "Microsoft.AspNet.WebApi.WebHost >= 5.2.9",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.5",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.5",
@@ -9557,6 +9558,10 @@
             "version": "[3.0.50813.1, )"
           },
           "Microsoft.AspNet.WebApi.Client": {
+            "target": "Package",
+            "version": "[5.2.9, )"
+          },
+          "Microsoft.AspNet.WebApi.Core": {
             "target": "Package",
             "version": "[5.2.9, )"
           },

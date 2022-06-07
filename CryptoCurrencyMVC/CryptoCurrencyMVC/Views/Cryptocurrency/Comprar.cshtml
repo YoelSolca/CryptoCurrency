@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Inversiones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+        <div class="currency">
+        <select id="currency-one">
+          <option value="ARS" selected>ARS</option>
+        </select>
+        <input type="number" id="amount-one" placeholder="0" value="1" />
+      </div>
+
+      
+      <div class="swap-rate-container">
+        <button class="btn" id="swap">Swap</button>
+        <div class="rate" id="rate"></div>
+      </div>
+
+
+         <div class="currency">
+        <select id="currency-two">
+          <option value="USD" selected>USD</option>
+        </select>
+        <input type="number" id="amount-two" placeholder="0" />
+      </div>
+
+        <div class="swap-rate-container">
+        <button class="btn" id="swap1">Swap</button>
+        <div class="rate" id="rate1"></div>
+      </div>
+
+
+     <div class="currency">
+        <select id="currency-three">
+          <option value="BTC" selected>Bitcoin</option>
+          <option value="ETH">Ethereum</option>
+          <option value="XRP">XRP</option>
+          <option value="USDT">Tether</option>
+          <option value="LINK">Chainlink</option>
+          <option value="HMR">Homeros</option>
+          <option value="BCH">Bitcoin Cash</option>
+          <option value="TITAN">TitanSwap</option>
+          <option value="HEX">HEX</option>
+          <option value="CRO">Crypto.com Coin</option>
+      </select>
+        <input type="number" id="amount-three" placeholder="0" />
+      </div>
+    </div>

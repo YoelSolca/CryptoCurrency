@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,7 +27,7 @@
 
     <header>
 
-        <h6>Hola Yoel</h6>
+        <h6>@HttpContextAccessor.HttpContext.Session.GetString("name")</h6>
 
         <nav class="navbar">
 
@@ -32,8 +36,11 @@
 
                     <a class="bi bi-house" asp-area="" asp-controller="Cryptocurrency" asp-action="List">Criptomonedas</a>
 
+                    <a class="bi bi-house" asp-area="" asp-controller="Cryptocurrency" asp-action="Comprar">Inversiones</a>
+
                     <a class="bi bi-house" asp-area="" asp-controller="Home" asp-action="Index">Tu dinero </a>
                     <a class="bi bi-house" asp-area="" asp-controller="Home" asp-action="Index">Actividad </a>
+                    <a class="bi bi-house" asp-area="" asp-controller="Login" asp-action="Logout">Salir </a>
 
 
          @*   <div class="container-fluid">

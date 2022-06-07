@@ -1,4 +1,6 @@
-﻿@model UserModel
+﻿
+
+@model UserModel
 
 @{
     Layout = null;
@@ -11,6 +13,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
     <link rel="stylesheet" href="~/css/styles.css"/>
+    <!-- CSS only -->
 </head>
 <body>
    
@@ -35,6 +38,14 @@
         </form>
      </div>
 </div>*@
+     
+
+@if (@ViewBag.msg != null){
+            <div style="background:#fabfb7; padding: 15px;">
+            @ViewBag.msg
+        </div>
+    }
+
 
  <div class="container" id="container">
         <div class="form-container sign-up-container">

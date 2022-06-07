@@ -1,4 +1,5 @@
-﻿using CryptoCurrencyMVC.Models;
+﻿using CryptoCurrencyMVC.Data;
+using CryptoCurrencyMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 namespace CryptoCurrencyMVC.Controllers
@@ -6,6 +7,7 @@ namespace CryptoCurrencyMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        UserData userData = new UserData();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -14,7 +16,17 @@ namespace CryptoCurrencyMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            ViewBag.email = HttpContext.Session.GetString("email");
+            ViewBag.password = HttpContext.Session.GetString("password");
+
+            if(ViewBag.email == null && ViewBag.password == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+
+            var oUser = userData.ObtenerUsuario(ViewBag.email, ViewBag.password);
+
+            return View(oUser);
         }
 
         public IActionResult Privacy()
