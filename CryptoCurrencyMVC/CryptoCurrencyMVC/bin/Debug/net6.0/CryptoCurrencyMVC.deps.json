@@ -40,6 +40,7 @@
           "Microsoft.AspNet.WebApi.WebHost": "5.2.9",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.5",
+          "PageList": "1.2.0",
           "System.Data.SqlClient": "4.8.3",
           "System.Net.Security": "4.3.2",
           "Microsoft.AspNetCore.Antiforgery": "6.0.0.0",
@@ -1772,6 +1773,17 @@
         },
         "compile": {
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
+        }
+      },
+      "PageList/1.2.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/PageList.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/PageList.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
@@ -4900,6 +4912,13 @@
       "sha512": "sha512-mCv/GzvMk5iatWoZY41PoIShEbwVxq9CDCc1fV/uqPFKZ4DD/1JuKZ5AL/FJJRsTanvMR3EOXKYCLdQ7PFYn8Q==",
       "path": "nuget.versioning/5.11.0",
       "hashPath": "nuget.versioning.5.11.0.nupkg.sha512"
+    },
+    "PageList/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cE0TmBfCTtVu3mjI1Ghi2g/F3pOCqOO0i8tp3+gPqbNqdUkayzosmWo2BNPdoAJarF80RAWWsZbrt1BGIVOpjA==",
+      "path": "pagelist/1.2.0",
+      "hashPath": "pagelist.1.2.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "type": "package",

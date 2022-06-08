@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Tu actividad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using PageList;
+
+  <div style="margin-top: 2.1rem; display: flex;
+    justify-content: center;
+    align-items: center;">
+<div class="card" style="width: 45rem !important; margin-left: 0 !important; margin-top: 3rem !important;">
+  @if(@ViewBag.Operations != null)
+   @foreach (var item in @ViewBag.Operations)
+   {
+      <div class="card-body">
+          <p>@item.Title</p>
+      </div>
+ }
+</div>
+  </div>
+

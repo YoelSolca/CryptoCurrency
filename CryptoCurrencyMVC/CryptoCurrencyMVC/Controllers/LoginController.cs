@@ -46,9 +46,12 @@ namespace CryptoCurrencyMVC.Controllers
             if(!String.IsNullOrEmpty(oUser.Email) && !String.IsNullOrEmpty(oUser.Password))
             {
                 HttpContext.Session.SetString("email", user.Email);
+                HttpContext.Session.SetString("userId", oUser.ID.ToString());
+
                 HttpContext.Session.SetString("password", user.Password);
                 HttpContext.Session.SetString("name", oUser.FirstName + " " + oUser.LastName);
-
+               
+                HttpContext.Session.SetString("Amount", oUser.accountPeso.AccountBalance.ToString());
 
                 ViewBag.AccountPeso = oUser.accountPeso;
                 return RedirectToAction("Index", "Home");

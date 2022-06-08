@@ -5,6 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+  <div class="card" style="width: 58rem !important;">
+  <div class="card-body">
 <table class="table">
   <thead>
     <tr>
@@ -18,7 +21,7 @@
   @foreach (var item in Model)
     {
             <tr>
-                <td><img src="@item.image" width="20"/>@item.symbol @item.name</td>
+                <td><img src="@item.image" width="20"/><span style="margin: 0 3px">@item.symbol </span> @item.name</td>
 
                 <td>@item.current_price.ToString("N1", System.Globalization.CultureInfo.InvariantCulture) US$</td>
 
@@ -29,3 +32,6 @@
     }
   </tbody>
 </table>
+  </div>
+</div>
+

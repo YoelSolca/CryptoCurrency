@@ -67,6 +67,10 @@
               "target": "Package",
               "version": "[6.0.5, )"
             },
+            "PageList": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"

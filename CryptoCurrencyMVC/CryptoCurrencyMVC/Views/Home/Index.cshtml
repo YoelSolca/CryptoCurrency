@@ -1,51 +1,57 @@
-﻿@model UserModel
+﻿
+
+@model UserModel
 
 @{
     ViewData["Title"] = "Inicio";
-
-
+    ViewData["Type"] = "Peso";
 }
 
-<section class="container1">
-    <div class="row justify-content-sm-around">
-    @*        <div class="col-md-6">
-                <div class="card text-left">
-              <div class="card-body">
-                <h5 class="card-title">Dinero disponible</h5>
-                <p class="card-text">$0,00</p>
-                </div>
-        <div class="button">
 
+<style>
+  .modificar {
+   color: #000;
+   text-decoration: none;
+}
 
-        <a asp-area="" asp-controller="Operation" asp-action="Deposit" class="btn btn-primary">Ingresar dinero</a>
-        <a asp-area="" asp-controller="Operation" asp-action="Transfer" class="btn btn-primary">Transferir dinero</a>
-        </div>
-      </div>
-    </div>*@
+.card-footer:hover{
+    background: #c59d5f;
+    transition: all .5s
+}
 
-   
+.modificar:hover{
+    color:#000 !important;
+}
 
+</style>
+
+<section class="d-flex justify-content-around">
+
+<div class="container1">
+    <div style="cursor: pointer;">
       <div id="Form1" class="div">
                       <div class="col-md-6">
-                <div class="card text-left">
-              <div class="card-body d-flex">
+                <div class="card text-left box" >
+              <div class="card-body d-flex justify-content-between flex-wrap">
                
-                  <div>
-                     <h5 class="card-title">Dinero disponible en cuenta peso</h5>
-                  <p class="card-text">$@Model.accountPeso.AccountBalance</p>
+                  <div class="title">
+                     <h5 class="card-title" style="font-size:13px !important; font-weight:400;">Dinero disponible en cuenta peso</h5>
+                     <button><a asp-area="" asp-controller="Operation" asp-action="DepositPeso">Tu CBU</a></button>
                   </div>
+                
 
                         <div class="btn-box">
-                            <button type="button" id="Next1"> > </button>
+                            <button type="button" id="Next1"><i class="bi bi-arrow-right-circle"></i></button>
                         </div>
 
+                  <p class="card-text w-100 p-4" style="font-size: 25px; font-weight: 500;">$ @Model.accountPeso.AccountBalance</p>
                 </div>
 
                 
 
         <div class="button">
-        <a asp-area="" asp-controller="Operation" asp-action="Deposit" class="btn btn-primary">Ingresar dinero</a>
-        <a asp-area="" asp-controller="Operation" asp-action="Transfer" class="btn btn-primary">Transferir dinero</a>
+        <a asp-area="" asp-controller="Operation" asp-action="DepositPeso">Ingresar dinero</a>
+        <a asp-area="" asp-controller="Operation" asp-action="Transfer">Transferir dinero</a>
         </div>
       </div>
     </div>
@@ -55,27 +61,28 @@
         <div id="Form2" class="div">
        
              <div class="col-md-6">
-                <div class="card text-left">
-              <div class="card-body d-flex">
+                <div class="card text-left box">
+              <div class="card-body d-flex justify-content-between flex-wrap">
                
                   <div>
-                     <h5 class="card-title">Dinero disponible en cuenta dolar</h5>
-@*                    <p class="card-text">@Model.accountDollar.AccountBalance</p>
-*@                  </div>
+                     <h5 class="card-title" style="font-size:13px !important; font-weight:400;">Dinero disponible en cuenta dolar</h5>
+                </div>
 
+               
                         
                     <div class="btn-box">
-                        <button type="button" id="Back1"> < </button>
-                        <button type="button" id="Next2"> > </button>
+                        <button type="button" id="Back1"><i class="bi bi-arrow-left-circle"></i></button>
+                        <button type="button" id="Next2"><i class="bi bi-arrow-right-circle"></i></button>
                     </div>
 
+                  <p class="card-text w-100 p-4" style="font-size: 25px; font-weight: 500;">$ @Model.accountPeso.AccountBalance</p>
                 </div>
 
                 
 
                 <div class="button">
-                <a asp-area="" asp-controller="Operation" asp-action="Deposit" class="btn btn-primary">Ingresar dinero</a>
-                <a asp-area="" asp-controller="Operation" asp-action="Transfer" class="btn btn-primary">Transferir dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="Deposit">Ingresar dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="Transfer">Transferir dinero</a>
                 </div>
               </div>
             </div>
@@ -84,59 +91,95 @@
         <div id="Form3" class="div">
            
              <div class="col-md-6">
-                <div class="card text-left">
-              <div class="card-body d-flex">
+                <div class="card text-left box">
+              <div class="card-body d-flex justify-content-between flex-wrap">
                
                   <div>
-                     <h5 class="card-title">Dinero disponible en cuenta criptomoneda</h5>
-@*                    <p class="card-text">@Model.AccountCryptocurrencyModel.AccountBalance</p>
-*@                  </div>
+                     <h5 class="card-title" style="font-size:13px !important; font-weight:400;">Dinero disponible en cuenta criptomoneda</h5>
+               </div>
+
+
 
                    <div class="btn-box">
-                <button type="button" id="Back2"> < </button>
-                <button type="submit"> > </button>
+                <button type="button" id="Back2"><i class="bi bi-arrow-left-circle"></i></button>
             </div>
 
+                  <p class="card-text w-100 p-4" style="font-size: 25px; font-weight: 500;">$ @Model.accountPeso.AccountBalance</p>
                 </div>
 
                 <div class="button">
-                <a asp-area="" asp-controller="Operation" asp-action="Deposit" class="btn btn-primary">Ingresar dinero</a>
-                <a asp-area="" asp-controller="Operation" asp-action="Transfer" class="btn btn-primary">Transferir dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="Deposit">Ingresar dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="Transfer">Transferir dinero</a>
                 </div>
               </div>
             </div>
         </div>
-
-
-   @*  <div class="col-md-6">
-             <div class="card text-left">
-              <div class="card-header">
-                Tu actividad 
-              </div>
-              <div class="card-body body">
-              </div>
-            </div>
-            </div>*@
      </div>
+</div>
 
+  <div style="margin-top: 2.1rem;">
+<div class="card" style="box-shadow: -1px 9px 15px -6px rgba(0,0,0,0.75);">
+  <div class="card-header">
+    Tu actividad
+  </div>
+  @if(@ViewBag.Operations != null)
+   @foreach (var item in @ViewBag.Operations)
+   {
+      <div class="card-body" style="display:flex; justify-content:space-between; align-items: center;">
+          <img src="@item.Icon">
+          <p style="margin:0 !important;">@item.Title</p>
+          
+          
+          <div style="display: flex; flex-direction: column;">
+          <p style="margin:0 !important; font-size: 12px;">@item.Amount</p>
+          <p style="margin:0 !important;  font-size: 12px;">@item.Date.ToString("dd/MM/yyyy")</p>
+          </div>
+      </div>
+ }
+
+   <div class="card-footer text-muted" style="cursor:pointer; text-align: center;">
+    <a asp-area="" asp-controller="History" asp-action="History" class="modificar">
+      Ver toda tu actividad
+    </a>
+  </div>
+</div>
+  </div>
 </section>
 
 
-@*<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mb-4 ml-2 mr-2 text-left">
-                <div class="card-body">
-                    <p>blahblahblah</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card mb-4 ml-2 mr-2 text-left">
-                <div class="card-body">
-                    <p>blahblahblahblahblahb lahblahblahbl ahblahbla hblahblahblahblahblahbla hblahblahbla hblahblahblahb lahblahblahblahblahblahblahblahbla hblahblahblahblahblahblahb lahblahblahblahblahblahblahblahbl ahblahblahblahblahb lahblahblahblahblahblah</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
+
+
+ <script>
+     let Form1 = document.getElementById("Form1");
+let Form2 = document.getElementById("Form2");
+let Form3 = document.getElementById("Form3");
+
+let Next1 = document.getElementById("Next1");
+let Next2 = document.getElementById("Next2");
+
+let Back1 = document.getElementById("Back1");
+let Back2 = document.getElementById("Back2");
+
+
+
+Next1.onclick = function () {
+    Form1.style.left = "-450px";
+    Form2.style.left = "40px";
+}
+
+Back1.onclick = function () {
+    Form1.style.left = "40px";
+    Form2.style.left = "450px";
+
+}
+
+Next2.onclick = function () {
+    Form2.style.left = "-450px";
+    Form3.style.left = "40px";
+}
+
+Back2.onclick = function () {
+    Form2.style.left = "40px";
+    Form3.style.left = "450px";
+}
+ </script>

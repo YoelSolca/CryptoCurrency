@@ -150,9 +150,6 @@ namespace CryptoCurrencyMVC.Data
                             oUser.AccountCryptocurrencyModel = new AccountCryptocurrencyModel();
                             oUser.AccountCryptocurrencyModel.UUID = Guid.Parse(dr["UUID"].ToString());
                             oUser.AccountCryptocurrencyModel.AccountBalance = Convert.ToDouble(dr["accountBalance"]);
-
-
-
                         }
                     }
                 }
@@ -166,6 +163,197 @@ namespace CryptoCurrencyMVC.Data
 
             return oUser;
         }
+
+
+
+        public List<OperationModel> Movements(int id)
+        {
+            var oLista = new List<OperationModel>();
+            bool respuesta;
+            try
+            {
+                using (var connection = new SqlConnection(cn.getConnection()))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("Operations", connection);
+
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oLista.Add(new OperationModel()
+                            {
+                                ID = Convert.ToInt32(dr["ID"]),
+                                Title = dr["INFO"].ToString(),
+                                Icon = dr["Imagen"].ToString(),
+                                Date =  Convert.ToDateTime(dr["Fecha"]),
+                                Amount = Convert.ToDouble(dr["Cantidad"])
+                            });
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.Message;
+            }
+
+            return oLista;
+        }
+
+
+
+        public bool Transfer(TransferModel transfer, int userid, int id)
+        {
+            bool respuesta;
+
+            try
+            {
+                using (var connection = new SqlConnection(cn.getConnection()))
+                {
+                    connection.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("Operacion", connection);
+
+                     
+                    //numero de transaccion
+
+                    StringBuilder SB = new StringBuilder();
+                    for (int i = 0; i < 22; i++)
+                        SB.Append(rnd.Next(0, 9));
+
+
+                    sqlCommand.Parameters.AddWithValue("@Title", "Nueva transferencia");
+                    sqlCommand.Parameters.AddWithValue("@Date", DateTime.Now);
+                    sqlCommand.Parameters.AddWithValue("@Amount", transfer.Amount);
+                    sqlCommand.Parameters.AddWithValue("@TransactionNumber", SB.ToString());
+                    sqlCommand.Parameters.AddWithValue("@Icon", "https://i.imgur.com/lw6Cpl1.png");
+
+                    sqlCommand.Parameters.AddWithValue("@ID", userid);
+                    sqlCommand.Parameters.AddWithValue("@userid", userid);
+
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.ExecuteNonQuery();
+
+                    respuesta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+
+        }
+
+
+        public bool Editar(double amount, int id)
+        {
+            bool respuesta;
+
+            try
+            {
+
+                using (var conexion = new SqlConnection(cn.getConnection()))
+                {
+                    conexion.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("Editar", conexion);
+
+
+                    sqlCommand.Parameters.AddWithValue("Id", id);
+                    sqlCommand.Parameters.AddWithValue("Amount", amount);
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                respuesta = true;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+
+
+        public TransferModel VerificarCBU(string CBU)
+        {
+
+            var transferModel = new TransferModel();
+
+
+            using (var conexion = new SqlConnection(cn.getConnection()))
+            {
+                conexion.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("VerificarCBU", conexion);
+                sqlCommand.Parameters.AddWithValue("@CBU", CBU);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                using (var dr = sqlCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        transferModel.ID = Convert.ToInt32(dr["ID"]);
+                        transferModel.CBU = dr["CBU"].ToString();
+                    }
+                }
+            }
+            return transferModel;
+
+        }
+
+
+        public List<OperationModel> History(int id)
+        {
+            var oLista = new List<OperationModel>();
+            bool respuesta;
+            try
+            {
+                using (var connection = new SqlConnection(cn.getConnection()))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("Historial", connection);
+
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oLista.Add(new OperationModel()
+                            {
+                                ID = Convert.ToInt32(dr["ID"]),
+                                Title = dr["INFO"].ToString()
+                            });
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.Message;
+            }
+
+            return oLista;
+        }
+
 
     }
 }

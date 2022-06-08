@@ -19,5 +19,6 @@ namespace CryptoCurrencyMVC.Models
         public AccountDollarModel accountDollar { get; set; }
         public AccountCryptocurrencyModel AccountCryptocurrencyModel { get; set; }
 
+        public ICollection<UserOperation> userOperation { get; set; }
     }
 }

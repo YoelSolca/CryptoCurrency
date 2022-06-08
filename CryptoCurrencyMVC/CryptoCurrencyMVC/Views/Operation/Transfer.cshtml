@@ -1,8 +1,98 @@
-﻿
+﻿@model TransferModel
+
 @{
     ViewData["Title"] = "Transferencias";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Transfer</h1>
+<style>
+    .modificar {
+   color: #000;
+   text-decoration: none;
+}
 
+.card-footer:hover{
+    background: #c59d5f;
+    transition: all .5s
+}
+
+.modificar:hover{
+    color:#000 !important;
+}
+
+h6{
+    text-align: center !important;
+    width: 45% !important;
+    padding: 2rem 0 0 0 !important;
+    color: #000 !important;
+    font-size: 16px;
+}
+
+.form-control:focus {
+        border-color: #c59d5f;
+        box-shadow: none !important;
+    } 
+
+
+.bt{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 17px;
+    margin-top: 1rem;
+    margin-right: 10.1rem;
+}
+
+ .a:hover{
+   background: #c59d5f !important;
+   color: #fff;
+   transition: all .5s;
+   border: 1px solid #f6f5f7 !important;
+}
+
+    </style>
+
+
+    
+@if (@ViewBag.msg != null){
+            <div style="background:#fabfb7; padding: 15px;">
+            @ViewBag.msg
+        </div>
+    }
+
+<h6>
+        Agregar una cuenta
+</h6>
+
+        <form asp-action="Transfer" asp.controller="Operation" method="post">
+<div class="d-flex justify-content-center flex-column align-items-center" style="margin-top: 1.6rem;">
+
+<div class="card" style="margin: 0!important; width: 45rem !important;">
+  <div class="card-body" style="padding: 2rem;">
+  <div class="form-row">
+    <div class="col">
+       <label>Ingresá el CBU, o alias</label>
+     
+       <input asp-for="CBU" type="text" class="form-control">
+       <label style="margin-top: 2rem;">Ingresá la cantidad a transferir</label>
+
+       <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input asp-for="Amount" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+              <button type="submit" class="btn btn-primary">Guardar</button>
+
+
+    @*<div class="button bt">
+        <a type="submit" class="a" style="border: 1px solid #000; background: #fff;">Transferir</a>
+        </div>
+*@
+</form>

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Consultar CBU y alias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .modificar {
+   color: #000;
+   text-decoration: none;
+}
+
+.card-footer:hover{
+    background: #c59d5f;
+    transition: all .5s
+}
+
+.modificar:hover{
+    color:#000 !important;
+}
+
+h6{
+    text-align: center !important;
+    width: 82% !important;
+    padding: 2rem 0 0 0 !important;
+    color: #000 !important;
+    font-size: 16px;
+    margin-top: 6rem;
+}
+
+</style>
+
+<h6>
+    Copia tu cvu o alias para ingresar o transferir dinero desde otra cuenta.
+</h6>
+
+<div class="d-flex justify-content-center flex-column align-items-center" style="margin-top: 3rem;">
+
+<div class="card" style="margin: 0!important; width: 45rem !important;">
+  <div class="card-body" style="padding: 2rem;">
+    <p style="margin: 0; text-align:left;">CBU</p>
+    <p style="text-align:left; margin:0;">000445454545544646464</p>
+  </div>
+</div>
+
+<div class="card" style="margin: 3rem 0 0 0!important; width: 45rem !important;">
+  <div class="card-body" style="padding: 2rem;">
+      <p style="margin: 0; text-align:left;">Alias</p>
+    <p style="text-align:left; margin:0;">Yoel</p>
+  </div>
+
+   <div class="card-footer text-muted" style="cursor:pointer; text-align: center;">
+    <a class="modificar">
+        Modificar mi alias
+    </a>
+  </div>
+
+
+</div>
+</div>

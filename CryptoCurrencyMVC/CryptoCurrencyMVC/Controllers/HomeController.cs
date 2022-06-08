@@ -26,6 +26,10 @@ namespace CryptoCurrencyMVC.Controllers
 
             var oUser = userData.ObtenerUsuario(ViewBag.email, ViewBag.password);
 
+            var oList = userData.Movements(oUser.ID);
+
+            ViewBag.Operations = oList;
+
             return View(oUser);
         }
 
