@@ -7,16 +7,14 @@ namespace CryptoCurrencyMVC.Controllers
     public class HistoryController : Controller
     {
         UserData userData = new UserData();
+        HistoryData historyData = new HistoryData();
 
-        public ActionResult History(int? i)
+        public ActionResult History()
         {
+            ViewBag.Id = HttpContext.Session.GetString("Id");
+            var oUser = userData.GetUser(Convert.ToInt32(ViewBag.Id));
 
-            ViewBag.email = HttpContext.Session.GetString("email");
-            ViewBag.password = HttpContext.Session.GetString("password");
-
-            var oUser = userData.ObtenerUsuario(ViewBag.email, ViewBag.password);
-
-            var oList = userData.History(oUser.ID);
+            var oList = historyData.History(oUser.ID);
 
             ViewBag.Operations = oList;
 

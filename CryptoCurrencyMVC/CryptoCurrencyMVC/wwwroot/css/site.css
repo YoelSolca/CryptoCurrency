@@ -15,15 +15,19 @@ header {
     background: #222;
     z-index: 1000;
     flex-flow: column;
-    padding: 0 4rem;
+    padding: 0 2.5rem;
     width: 15rem;
     text-align: center;
 }
 
-.navbar{
-    margin-top: 2rem;
+.navbar {
+    margin-top: 3rem;
+    width: 10rem;
 }
 
+i > a{
+    font-style: normal !important;
+}
 
 .card {
     margin-left: 3rem;
@@ -70,7 +74,6 @@ h6{
     }
 
 header .navbar a {
-    display: block;
     font-size: 18px;
     color: #fff;
     text-decoration: none;
@@ -82,9 +85,13 @@ header .navbar a {
 
     header .navbar a:hover {
         color: #c59d5f;
-        background: #f7f7f72b;
+       /* background: #f7f7f72b;*/
     }
 
+.navbar i {
+    color: #fff;
+    margin-bottom: 0.5rem
+}
 html {
   font-size: 14px;
 }

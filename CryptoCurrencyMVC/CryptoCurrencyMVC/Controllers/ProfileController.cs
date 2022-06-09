@@ -13,11 +13,8 @@ namespace CryptoCurrencyMVC.Controllers
         public ActionResult Profile()
         {
             //Solo devuelve la vista
-
-            ViewBag.email = HttpContext.Session.GetString("email");
-            ViewBag.password = HttpContext.Session.GetString("password");
-
-            var oUser = userData.ObtenerUsuario(ViewBag.email, ViewBag.password);
+            ViewBag.Id = HttpContext.Session.GetString("Id");
+            var oUser = userData.GetUser(Convert.ToInt32(ViewBag.Id));
 
             return View(oUser);
         }

@@ -24,18 +24,12 @@ namespace CryptoCurrencyMVC.Models
         [Display(Name = "Ingresar domicilio: ")]
         public string? Address { get; set; }
 
-        [Required(ErrorMessage = "El genero es obligatorio!")]
-        [Display(Name = "Ingresar genero: ")]
-        public string? Gender { get; set; }
+        [Required(ErrorMessage = "El dni es obligatorio!")]
+        [Display(Name = "Ingresar dni: ")]
+        public string? Dni { get; set; }
 
         [Required(ErrorMessage = "La fecha de nacimiento es obligatoria!")]
         [Display(Name = "Ingresar fecha de nacimiento: ")]
         public DateTime Birthdate { get; set; }
-
-        [Required(ErrorMessage = "La provincia es obligatoria!")]
-        [Display(Name = "Ingresar provincia: ")]
-        public string? LocationName { get; set; }
-
-
     }
 }

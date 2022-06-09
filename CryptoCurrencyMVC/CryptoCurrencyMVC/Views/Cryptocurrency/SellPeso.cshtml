@@ -1,0 +1,131 @@
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "Venta en pesos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+        .submit  {
+        background: #d8c3a2;
+        padding: 5px;
+        border-radius: 5px;
+        color: #000;
+        font-size: 15px;
+        font-weight: 300;
+        border: none;
+        width: 130px;
+        text-align: center;
+        margin-top: 17px;
+    }
+
+    form{
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+</style>
+
+
+@if (@ViewBag.msg != null){
+            <div style="background:#fabfb7; padding: 15px;">
+            @ViewBag.msg
+        </div>
+    }
+
+<form asp-action="SellPeso" asp.controller="Cryptocurrency" method="post">
+
+  <div class="card" style="width: 38rem !important; margin-left: 3.1rem !important; margin-top: 5rem !important;">
+  <div class="card-body">
+    <div class="container">
+
+
+
+                <div class="currency">
+        <select id="currency-one">
+          <option value="BTC" selected>Bitcoin</option>
+        </select>
+        <input name="value1" type="number" id="amount-one" placeholder="0" step="any" min="0"/>
+      </div>
+     
+      
+      <div class="swap-rate-container">
+        <button class="btn" id="swap"></button>
+        <div class="rate" id="rate"></div>
+      </div>
+
+      <div class="currency">
+        <select id="currency-three">
+          <option value="ARS" selected>ARS</option>
+      </select>
+        <input name="value2" type="text" id="amount-three" placeholder="0" step="any"/>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+ <div class="btn">
+ <button type="submit" class="submit">Vender</button>
+ </div></form>
+
+
+<script>
+    const currencyEl_one = document.getElementById('currency-one');
+const currencyEl_three = document.getElementById('currency-three');
+
+const amountEl_one = document.getElementById('amount-one');
+const amountEl_three = document.getElementById('amount-three');
+
+const rateEl = document.getElementById('rate');
+const swap = document.getElementById('swap');
+
+
+// Fetch exchange rates and update the dome
+function calculate() {
+    const currency_one = currencyEl_one.value;
+    const currency_three = currencyEl_three.value;
+
+    fetch(
+        `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=ARS`)
+        .then((res) => res.json())
+        .then((data) => {
+
+            var result = `${data.DISPLAY.BTC.ARS.PRICE}`;
+
+             const newStr = result.slice(4)
+
+            let replaced1 = newStr.replaceAll(',', '.');
+
+            var ho = parseFloat(replaced1);
+
+          //  rateEl1.innerHTML = `<span class="symbol">1 BTC = ${1 / ho}</span>`;
+
+
+            amountEl_three.value = `${ho * amountEl_one.value}`;
+        });
+}
+
+// Event Listeners
+currencyEl_one.addEventListener('change', calculate);
+amountEl_one.addEventListener('input', calculate);
+currencyEl_three.addEventListener('change', calculate);
+amountEl_three.addEventListener('input', calculate);
+swap.addEventListener('click', () => {
+    const temp = currencyEl_three.value;
+    currencyEl_three.value = currencyEl_one.value;
+    currencyEl_three.value = temp;
+    calculate();
+});
+
+calculate();
+</script>

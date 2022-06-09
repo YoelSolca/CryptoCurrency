@@ -20,8 +20,14 @@ namespace CryptoCurrencyMVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return RedirectToAction("Login");
             }
+
+            //var verifyEmail = userData.VerifyEmail(oUser.Email);
+
+            //if(verifyEmail != null){
+            //    return RedirectToAction("Login");
+            //}
 
             var respuesta = userData.RegisterUser(oUser);
 
@@ -29,7 +35,7 @@ namespace CryptoCurrencyMVC.Controllers
             if (respuesta)
                 return RedirectToAction("Login");
             else
-                return View();
+                return RedirectToAction("Login");
         }
 
         public ActionResult Login()
@@ -38,24 +44,21 @@ namespace CryptoCurrencyMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(UserModel user)
+        public ActionResult Login(UserModel oUserModel)
         {
-            var oUser = userData.ObtenerUsuario(user.Email, user.Password);
-
+            var oUser = userData.Login(oUserModel.Email, oUserModel.Password);
 
             if(!String.IsNullOrEmpty(oUser.Email) && !String.IsNullOrEmpty(oUser.Password))
             {
-                HttpContext.Session.SetString("email", user.Email);
-                HttpContext.Session.SetString("userId", oUser.ID.ToString());
-
-                HttpContext.Session.SetString("password", user.Password);
-                HttpContext.Session.SetString("name", oUser.FirstName + " " + oUser.LastName);
-
-                HttpContext.Session.SetString("Amount", oUser.accountPeso.AccountBalance.ToString());
-
+                HttpContext.Session.SetString("email", oUserModel.Email);
+                HttpContext.Session.SetString("password", oUserModel.Password);
+                HttpContext.Session.SetString("name", oUser.FirstName);
                 HttpContext.Session.SetString("Id", oUser.ID.ToString());
 
-                ViewBag.AccountPeso = oUser.accountPeso;
+                var oUserId = userData.GetUser((oUser.ID));
+
+                ViewBag.AccountPeso = oUserId.accountPeso;
+                HttpContext.Session.SetString("Amount", oUserId.accountPeso.AccountBalance.ToString());
 
                 return RedirectToAction("Index", "Home");
             }
@@ -64,20 +67,7 @@ namespace CryptoCurrencyMVC.Controllers
                 ViewBag.msg = "Email o contraseña ingresada es incorrecta";
                 return View();
             }
-
-            return View();
         }
-
-        
-
-
-        public ActionResult Welcome()
-        {
-            ViewBag.email = HttpContext.Session.GetString("email");
-
-            return View();
-        }
-
 
         [Route("logout")]
         public ActionResult Logout()

@@ -1,7 +1,6 @@
 ﻿namespace CryptoCurrencyMVC.Models
 {
-    public class DepositModel
+    public class DepositModel: OperationModel
     {
-        public string Entity { get; set; }
     }
 }

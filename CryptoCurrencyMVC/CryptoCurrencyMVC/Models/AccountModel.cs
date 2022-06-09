@@ -5,7 +5,6 @@
         public int ID { get; set; }
         public string CBU { get; set; }
         public string Alias { get; set; }
-        public string AccountNumber { get; set; }
         public double AccountBalance { get; set; }
     }
 }

@@ -21,14 +21,6 @@
     color:#000 !important;
 }
 
-h6{
-text-align: left !important;
-    width: 70% !important;
-    color: #000 !important;
-    font-size: 16px;
-    margin-top: 3rem;
-}
-
 .form-control:focus {
         border-color: #c59d5f;
         box-shadow: none !important;
@@ -104,13 +96,13 @@ text-align: left !important;
       <div class="form-row" style="display:flex; justify-content: space-around">
     <div class="col-md-4 mb-3">
       <label for="validationServer01">Nombre</label>
-      <input asp-for="FirstName" type="text" class="form-control" id="validationServer01">
+      <input asp-for="FirstName" type="text" class="form-control" id="validationServer01" readonly>
        <span asp-validation-for="FirstName" class="text-danger"></span>
 
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationServer02">Apellido</label>
-      <input asp-for="LastName" type="text" class="form-control" id="validationServer02">
+      <input asp-for="LastName" type="text" class="form-control" id="validationServer02" readonly>
              <span asp-validation-for="LastName" class="text-danger"></span>
 
     </div>
@@ -133,9 +125,9 @@ text-align: left !important;
 
         <div class="form-row" style="display:flex; justify-content: space-around">
     <div class="col-md-4 mb-3">
-      <label for="validationServer01">Genero</label>
-      <input asp-for="Gender" type="text" class="form-control" id="validationServer01">
-       <span asp-validation-for="Gender" class="text-danger"></span>
+      <label for="validationServer01">Documento</label>
+      <input asp-for="Dni" type="text" class="form-control" id="validationServer01">
+       <span asp-validation-for="Dni" class="text-danger"></span>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationServer02">Fecha de nacimiento</label>
@@ -144,13 +136,6 @@ text-align: left !important;
     </div>
   </div>
 
-        <div class="form-row" style="margin-left: 3.4rem;">
-    <div class="col-md-4 mb-3">
-      <label for="validationServer01">Provincia</label>
-      <input  asp-for="LocationName" type="text" class="form-control" id="validationServer01"  style="width: 13.7rem;">
-      <span asp-validation-for="LocationName" class="text-danger"></span>
-    </div>
-  </div>
 
   </div>
 </div> 

@@ -1,10 +1,9 @@
 ﻿@model UserModel
 
 @{
-    ViewData["Title"] = "Consultar CBU y alias";
+    ViewData["Title"] = "DepositCrypto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 <style>
     .modificar {
@@ -24,23 +23,15 @@
 </style>
 
 <h6>
-    Copia tu cbu para ingresar o transferir dinero desde otra cuenta.
+    Copia tu uuid para ingresar o transferir dinero desde otra cuenta.
 </h6>
 
 <div class="d-flex justify-content-center flex-column align-items-center" style="margin-top: 1rem;">
 
 <div class="card" style="margin: 0!important; width: 45rem !important;">
   <div class="card-body" style="padding: 2rem;">
-    <p style="margin: 0; text-align:left;">CBU</p>
-    <p style="text-align:left; margin:0;">@Model.accountPeso.CBU</p>
+    <p style="margin: 0; text-align:left;">UUID</p>
+    <p style="text-align:left; margin:0;">@Model.AccountCryptocurrencyModel.UUID</p>
   </div>
-</div>
-
-<div class="card" style="margin: 3rem 0 0 0!important; width: 45rem !important;">
-  <div class="card-body" style="padding: 2rem;">
-      <p style="margin: 0; text-align:left;">Alias</p>
-    <p style="text-align:left; margin:0;">@Model.accountPeso.Alias</p>
-  </div>
-
 </div>
 </div>

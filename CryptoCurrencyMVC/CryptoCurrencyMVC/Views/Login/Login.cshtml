@@ -1,19 +1,15 @@
-﻿
-
-@model UserModel
+﻿@model UserModel
 
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
     <link rel="stylesheet" href="~/css/styles.css"/>
-    <!-- CSS only -->
 </head>
 <body>
    
@@ -22,29 +18,13 @@
         textarea:focus, input:focus{
     outline: none;
 }
+
+input{
+width: 88%!important;
+}
+
+
     </style>
-@*    <div class="card">
-    <h5 class="card-header">Inicar session</h5>
-      <div class="card-body">
-        <form asp-action="Login" asp.controller="Login" method="post">
-                  <div class="mb-3">
-                        <label class="form-label">Email: </label>
-                        <input asp-for="Email" type="email" class="form-control">
-
-                        <span asp-validation-for="Email" class="text-danger"></span>
-
-                          <label class="form-label">Contraseña: </label>
-                         <input asp-for="Password" type="password" class="form-control">
-
-                          <span asp-validation-for="Password" class="text-danger"></span>
-                     </div>
-
-              <button type="submit" class="btn btn-primary">Guardar</button>
-              <a asp-action="Register" asp.controller="Login" class="btn btn-warning">Registrarse</a>
-        </form>
-     </div>
-</div>*@
-     
 
 @if (@ViewBag.msg != null){
             <div style="background:#fabfb7; padding: 15px;">
@@ -55,27 +35,70 @@
 
  <div class="container" id="container">
         <div class="form-container sign-up-container">
-        <form asp-action="Login" asp.controller="Login" method="post">
-                <h1>Create Account</h1>
+        <form asp-action="Register" asp.controller="Login" method="post" style="padding: 0 24px!important;">
+                <h1 style="margin-bottom: 2rem !important;">Crear una cuenta</h1>
 
-              <input asp-for="Email" type="email" class="form-control">
-              <span asp-validation-for="Email" class="text-danger"></span>              
-              
-              <input asp-for="Password" type="password" class="form-control">
-               <span asp-validation-for="Password" class="text-danger"></span>
-       
-              <button>Registrarse</button>
+                  <div class="form-row" style="display:flex; justify-content: space-around">
+    <div class="col-md-4 mb-3">
+      <input asp-for="FirstName" type="text" class="form-control" id="validationServer01" placeholder="Nombre">
+       <span asp-validation-for="FirstName" class="text-danger"></span>
+
+    </div>
+    <div>
+      <input asp-for="LastName" type="text" class="form-control" id="validationServer02" placeholder="Apellido">
+             <span asp-validation-for="LastName" class="text-danger"></span>
+
+    </div>
+  </div>
+
+      <div class="form-row" style="display:flex; justify-content: space-around">
+    <div>
+      <input asp-for="Phone" type="number" class="form-control" id="validationServer01" placeholder="Télefono">
+      <span asp-validation-for="Phone" class="text-danger"></span>
+
+    </div>
+    <div class="col-md-4 mb-3">
+      <input asp-for="Address" type="text" class="form-control" id="validationServer02" placeholder="Domicilio">
+       <span asp-validation-for="Address" class="text-danger"></span>
+
+    </div>
+  </div>
+
+      <div class="form-row" style="display:flex; justify-content: space-around">
+    <div>
+      <input  asp-for="Dni" type="text" class="form-control" id="validationServer01" style="width: 82% !important; margin-left: -10px;" placeholder="Dni">
+      <span asp-validation-for="Dni" class="text-danger"></span>
+    </div>
+    <div>
+      <input asp-for="Birthdate" type="date" class="form-control" id="validationServer02"> 
+       <span asp-validation-for="Birthdate" class="text-danger"></span>
+    </div>
+  </div>
+
+     <div class="form-row" style="display:flex; justify-content: space-around">
+    <div>
+      <input  asp-for="Email" type="email" class="form-control" id="validationServer01" placeholder="Correo electrónico">
+      <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+      <input  asp-for="Password" type="password" class="form-control" id="validationServer01" placeholder="Contraseña">
+      <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+  </div>
+  
+
+              <button style="margin-top: 2rem !important;">Registrarse</button>
             </form>
         </div>
 
         <div class="form-container sign-in-container">
         <form asp-action="Login" asp.controller="Login" method="post">
-                <h1>Inicio de sesión en Crypto</h1>
+                <h1>Inicio de sesión</h1>
 
-             <input class="email" asp-for="Email" type="email" class="form-control">
+             <input class="email" asp-for="Email" type="email" class="form-control" placeholder="Correo electrónico" style="width:70% !important;">
               <span asp-validation-for="Email" class="text-danger"></span>              
               
-              <input asp-for="Password" type="password" class="form-control">
+              <input asp-for="Password" type="password" class="form-control" placeholder="Contraseña" style="width:70% !important;>
                <span asp-validation-for="Password" class="text-danger"></span>
        
               <button type="submit">Iniciar sesión</button>
@@ -84,18 +107,23 @@
 
         <div class="overlay-container">
             <div class="overlay">
+
                 <div class="overlay-panel overlay-left">
                     <h1>Bienvenido de nuevo!</h1>
                     <p>Para mantenerse en contacto con nosotros, inicie sesión con sus datos de cuenta</p>
                     <button class="ghost" id="signIn">Iniciar sesión</button>
                 </div>
+
                 <div class="overlay-panel overlay-right">
                     <h1>Bienvenido!</h1>
                     <p>Introduce tus datos personales y empieza a comprar criptomonedas en unos minutoss</p>
+
                     <button class="ghost" id="signUp">
                         Registrarse
                     </button>
                 </div>
+
+
             </div>
         </div>
     </div>

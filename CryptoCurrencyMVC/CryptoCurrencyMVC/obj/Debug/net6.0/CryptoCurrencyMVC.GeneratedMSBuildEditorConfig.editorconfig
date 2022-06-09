@@ -15,16 +15,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\CryptoCurrency\CryptoCurrency\CryptoCurrencyMVC\CryptoCurrencyMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/Comprar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcQ29tcHJhci5jc2h0bWw=
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/Buy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcQnV5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/Venta.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcVmVudGEuY3NodG1s
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/SellDollar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcU2VsbERvbGxhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Cryptocurrency/SellPeso.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J5cHRvY3VycmVuY3lcU2VsbFBlc28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/History/History.cshtml]
@@ -51,28 +55,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cV2VsY29tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/DepositCrypto.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXERlcG9zaXRDcnlwdG8uY3NodG1s
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/DepositCryptocurrency.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXERlcG9zaXRDcnlwdG9jdXJyZW5jeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/DepositDolar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXERlcG9zaXREb2xhci5jc2h0bWw=
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/DepositDollar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXERlcG9zaXREb2xsYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/DepositPeso.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXERlcG9zaXRQZXNvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/Transfer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXFRyYW5zZmVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/TransferCrypto.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXFRyYW5zZmVyQ3J5cHRvLmNzaHRtbA==
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/TransferCryptocurrency.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXFRyYW5zZmVyQ3J5cHRvY3VycmVuY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/TransferDollar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXFRyYW5zZmVyRG9sbGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Operation/TransferPeso.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXFRyYW5zZmVyUGVzby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/CryptoCurrency/CryptoCurrency/CryptoCurrencyMVC/CryptoCurrencyMVC/Views/Profile/Profile.cshtml]
