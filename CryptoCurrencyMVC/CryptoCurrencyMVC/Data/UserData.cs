@@ -134,6 +134,7 @@ namespace CryptoCurrencyMVC.Data
                             oUser.Address = dr["Address"].ToString();
                             oUser.Gender = dr["Gender"].ToString();
                             oUser.LocationName = dr["LocationName"].ToString();
+                            oUser.Birthdate = Convert.ToDateTime(dr["Birthdate"]);
 
                             oUser.accountPeso = new AccountPesoModel();
                             oUser.accountPeso.CBU = dr["CBU"].ToString();
@@ -142,14 +143,14 @@ namespace CryptoCurrencyMVC.Data
                             oUser.accountPeso.AccountBalance = Convert.ToDouble(dr["accountBalance"]);
 
                             oUser.accountDollar = new AccountDollarModel();
-                            oUser.accountDollar.CBU = dr["CBU"].ToString();
-                            oUser.accountDollar.Alias = dr["Alias"].ToString();
+                            oUser.accountDollar.CBU = dr["CBUDolar"].ToString();
+                            oUser.accountDollar.Alias = dr["AliasDolar"].ToString();
                             oUser.accountDollar.AccountNumber = dr["Alias"].ToString();
-                            oUser.accountDollar.AccountBalance = Convert.ToDouble(dr["accountBalance"]);
+                            oUser.accountDollar.AccountBalance = Convert.ToDouble(dr["Balance"]);
 
                             oUser.AccountCryptocurrencyModel = new AccountCryptocurrencyModel();
                             oUser.AccountCryptocurrencyModel.UUID = Guid.Parse(dr["UUID"].ToString());
-                            oUser.AccountCryptocurrencyModel.AccountBalance = Convert.ToDouble(dr["accountBalance"]);
+                            oUser.AccountCryptocurrencyModel.data =  dr["DATA"].ToString();
                         }
                     }
                 }
@@ -208,7 +209,7 @@ namespace CryptoCurrencyMVC.Data
 
 
 
-        public bool Transfer(TransferModel transfer, int userid, int id)
+        public bool Transfer(double transfer, int userid, int id)
         {
             bool respuesta;
 
@@ -230,11 +231,14 @@ namespace CryptoCurrencyMVC.Data
 
                     sqlCommand.Parameters.AddWithValue("@Title", "Nueva transferencia");
                     sqlCommand.Parameters.AddWithValue("@Date", DateTime.Now);
-                    sqlCommand.Parameters.AddWithValue("@Amount", transfer.Amount);
+                    sqlCommand.Parameters.AddWithValue("@Amount", transfer);
                     sqlCommand.Parameters.AddWithValue("@TransactionNumber", SB.ToString());
                     sqlCommand.Parameters.AddWithValue("@Icon", "https://i.imgur.com/lw6Cpl1.png");
 
-                    sqlCommand.Parameters.AddWithValue("@ID", userid);
+                    sqlCommand.Parameters.AddWithValue("@Title2", "Nueva Deposito");
+                    sqlCommand.Parameters.AddWithValue("@Icon2", "https://i.imgur.com/rP0ffiu.png");
+
+                    sqlCommand.Parameters.AddWithValue("@ID", id);
                     sqlCommand.Parameters.AddWithValue("@userid", userid);
 
 
@@ -267,7 +271,42 @@ namespace CryptoCurrencyMVC.Data
                 {
                     conexion.Open();
 
-                    SqlCommand sqlCommand = new SqlCommand("Editar", conexion);
+                    //SqlCommand sqlCommand = new SqlCommand("editarcrypto", conexion);
+
+                    SqlCommand sqlCommand = new SqlCommand("editar", conexion);
+
+
+                    sqlCommand.Parameters.AddWithValue("Id", id);
+                    sqlCommand.Parameters.AddWithValue("Amount", amount);
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                respuesta = true;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+        public bool EditarDolar(double amount, int id)
+        {
+            bool respuesta;
+
+            try
+            {
+
+                using (var conexion = new SqlConnection(cn.getConnection()))
+                {
+                    conexion.Open();
+
+                    //SqlCommand sqlCommand = new SqlCommand("editarcrypto", conexion);
+
+                    SqlCommand sqlCommand = new SqlCommand("editarDolar", conexion);
 
 
                     sqlCommand.Parameters.AddWithValue("Id", id);
@@ -288,6 +327,39 @@ namespace CryptoCurrencyMVC.Data
             return respuesta;
         }
 
+
+
+
+        public bool Editar(char[] amount, int id)
+        {
+            bool respuesta;
+
+            try
+            {
+
+                using (var conexion = new SqlConnection(cn.getConnection()))
+                {
+                    conexion.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("editarcrypto", conexion);
+
+                    sqlCommand.Parameters.AddWithValue("Id", id);
+                    sqlCommand.Parameters.AddWithValue("Amount", amount);
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                respuesta = true;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
 
         public TransferModel VerificarCBU(string CBU)
         {
@@ -315,7 +387,60 @@ namespace CryptoCurrencyMVC.Data
             return transferModel;
 
         }
+       
+        public TransferModel VerificarCBUDollar(string CBU)
+        {
 
+            var transferModel = new TransferModel();
+
+
+            using (var conexion = new SqlConnection(cn.getConnection()))
+            {
+                conexion.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("verificarCBUDolar", conexion);
+                sqlCommand.Parameters.AddWithValue("@CBU", CBU);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                using (var dr = sqlCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        transferModel.ID = Convert.ToInt32(dr["ID"]);
+                        transferModel.CBU = dr["CBU"].ToString();
+                    }
+                }
+            }
+            return transferModel;
+
+        }
+
+        public AccountCryptocurrencyModel VerificarUUID(Guid UUID)
+        {
+
+            var accountCryptocurrency  = new AccountCryptocurrencyModel();
+
+
+            using (var conexion = new SqlConnection(cn.getConnection()))
+            {
+                conexion.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("verificarUUID", conexion);
+                sqlCommand.Parameters.AddWithValue("@UUID", UUID);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                using (var dr = sqlCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        accountCryptocurrency.ID = Convert.ToInt32(dr["ID"]);
+                        accountCryptocurrency.UUID = Guid.Parse(dr["UUID"].ToString());
+                    }
+                }
+            }
+            return accountCryptocurrency;
+
+        }
 
         public List<OperationModel> History(int id)
         {
@@ -338,7 +463,10 @@ namespace CryptoCurrencyMVC.Data
                             oLista.Add(new OperationModel()
                             {
                                 ID = Convert.ToInt32(dr["ID"]),
-                                Title = dr["INFO"].ToString()
+                                Title = dr["INFO"].ToString(),
+                                Icon = dr["Imagen"].ToString(),
+                                Date = Convert.ToDateTime(dr["Fecha"]),
+                                Amount = Convert.ToDouble(dr["Cantidad"])
                             });
                         }
                     }
@@ -354,6 +482,173 @@ namespace CryptoCurrencyMVC.Data
             return oLista;
         }
 
+
+        public bool Comprar(char[] transfer, int userid)
+        {
+            bool respuesta;
+
+            try
+            {
+                using (var connection = new SqlConnection(cn.getConnection()))
+                {
+                    connection.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("crypto", connection);
+
+
+                    //numero de transaccion
+
+                    StringBuilder SB = new StringBuilder();
+                    for (int i = 0; i < 22; i++)
+                        SB.Append(rnd.Next(0, 9));
+
+
+                    sqlCommand.Parameters.AddWithValue("@Title", "Nueva Compra");
+                    sqlCommand.Parameters.AddWithValue("@Date", DateTime.Now);
+                    sqlCommand.Parameters.AddWithValue("@Amount", transfer);
+                    sqlCommand.Parameters.AddWithValue("@Number", SB.ToString());
+                    sqlCommand.Parameters.AddWithValue("@Icon", "https://i.imgur.com/GCOdUHy.png");
+
+                    sqlCommand.Parameters.AddWithValue("@ID", userid);
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.ExecuteNonQuery();
+
+                    respuesta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+
+        }
+
+
+
+        public AccountDollarModel DepositoDolar(int id)
+        {
+
+            var acountDolar = new AccountDollarModel();
+
+            using (var conexion = new SqlConnection(cn.getConnection()))
+            {
+                conexion.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("SUMARDolar", conexion);
+                sqlCommand.Parameters.AddWithValue("@Id", id);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                using (var dr = sqlCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        acountDolar.ID = Convert.ToInt32(dr["ID"]);
+                        acountDolar.AccountBalance = Convert.ToDouble(dr["AccountBalance"]);
+                    }
+                }
+            }
+            return acountDolar;
+
+        }
+   
+        
+        public AccountCryptocurrencyModel DepositoCrypto(int id)
+        {
+
+            var accountCryptocurrency = new AccountCryptocurrencyModel();
+
+            using (var conexion = new SqlConnection(cn.getConnection()))
+            {
+                conexion.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("SUMARCrypto", conexion);
+                sqlCommand.Parameters.AddWithValue("@Id", id);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                using (var dr = sqlCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        accountCryptocurrency.ID = Convert.ToInt32(dr["ID"]);
+                        accountCryptocurrency.AccountBalance = Convert.ToDouble(dr["AccountBalance"]);
+                    }
+                }
+            }
+            return accountCryptocurrency;
+
+        }
+
+
+
+        public AccountPesoModel Deposito(int id)
+        {
+
+            var accountPeso = new AccountPesoModel();
+
+
+            using (var conexion = new SqlConnection(cn.getConnection()))
+            {
+                conexion.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("SUMARPESO", conexion);
+                sqlCommand.Parameters.AddWithValue("@Id", id);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                using (var dr = sqlCommand.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        accountPeso.ID = Convert.ToInt32(dr["ID"]);
+                        accountPeso.AccountBalance = Convert.ToDouble(dr["AccountBalance"]);
+                    }
+                }
+            }
+            return accountPeso;
+
+        }
+
+
+        public bool EditUser(PersonModel user, int id)
+        {
+            bool respuesta;
+
+            try
+            {
+
+                using (var conexion = new SqlConnection(cn.getConnection()))
+                {
+                    conexion.Open();
+
+                    SqlCommand sqlCommand = new SqlCommand("EditUser", conexion);
+
+
+                    sqlCommand.Parameters.AddWithValue("Id", id);
+                    sqlCommand.Parameters.AddWithValue("FirstName", user.FirstName);
+                    sqlCommand.Parameters.AddWithValue("LastName", user.LastName);
+                    sqlCommand.Parameters.AddWithValue("Phone", user.Phone);
+                    sqlCommand.Parameters.AddWithValue("Address", user.Address);
+                    sqlCommand.Parameters.AddWithValue("Gender", user.Gender);
+                    sqlCommand.Parameters.AddWithValue("Birthdate", user.Birthdate);
+                    sqlCommand.Parameters.AddWithValue("LocationName", user.LocationName);
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.ExecuteNonQuery();
+                }
+                respuesta = true;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
 
     }
 }

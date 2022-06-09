@@ -1,5 +1,4 @@
 ﻿
-
 @model UserModel
 
 @{
@@ -66,6 +65,7 @@
                
                   <div>
                      <h5 class="card-title" style="font-size:13px !important; font-weight:400;">Dinero disponible en cuenta dolar</h5>
+                     <button><a asp-area="" asp-controller="Operation" asp-action="DepositDolar">Tu CBU</a></button>
                 </div>
 
                
@@ -75,14 +75,14 @@
                         <button type="button" id="Next2"><i class="bi bi-arrow-right-circle"></i></button>
                     </div>
 
-                  <p class="card-text w-100 p-4" style="font-size: 25px; font-weight: 500;">$ @Model.accountPeso.AccountBalance</p>
+                  <p class="card-text w-100 p-4" style="font-size: 25px; font-weight: 500;">USD @Model.accountDollar.AccountBalance</p>
                 </div>
 
                 
 
                 <div class="button">
-                <a asp-area="" asp-controller="Operation" asp-action="Deposit">Ingresar dinero</a>
-                <a asp-area="" asp-controller="Operation" asp-action="Transfer">Transferir dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="DepositDolar">Ingresar dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="TransferDollar">Transferir dinero</a>
                 </div>
               </div>
             </div>
@@ -104,12 +104,12 @@
                 <button type="button" id="Back2"><i class="bi bi-arrow-left-circle"></i></button>
             </div>
 
-                  <p class="card-text w-100 p-4" style="font-size: 25px; font-weight: 500;">$ @Model.accountPeso.AccountBalance</p>
+                  <p class="card-text w-100 p-4" style="font-size: 25px; font-weight: 500;">BTC @ViewBag.data</p>
                 </div>
 
                 <div class="button">
-                <a asp-area="" asp-controller="Operation" asp-action="Deposit">Ingresar dinero</a>
-                <a asp-area="" asp-controller="Operation" asp-action="Transfer">Transferir dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="DepositCrypto">Ingresar dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="TransferCrypto">Transferir dinero</a>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@
    @foreach (var item in @ViewBag.Operations)
    {
       <div class="card-body" style="display:flex; justify-content:space-between; align-items: center;">
-          <img src="@item.Icon">
+          <img src="@item.Icon" width="40">
           <p style="margin:0 !important;">@item.Title</p>
           
           

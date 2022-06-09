@@ -1,4 +1,4 @@
-﻿@model TransferModel
+﻿@model AccountCryptocurrencyModel
 
 @{
     ViewData["Title"] = "Transferencias";
@@ -50,24 +50,6 @@ h6{
    border: 1px solid #f6f5f7 !important;
 }
 
-   .btn{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-        .submit  {
-        background: #d8c3a2;
-        padding: 5px;
-        border-radius: 5px;
-        color: #000;
-        font-size: 15px;
-        font-weight: 300;
-        border: none;
-        width: 130px;
-        text-align: center;
-        margin-top: 17px;
-    }
     </style>
 
 
@@ -82,23 +64,23 @@ h6{
         Agregar una cuenta
 </h6>
 
-        <form asp-action="Transfer" asp.controller="Operation" method="post">
+        <form asp-action="TransferCrypto" asp.controller="Operation" method="post">
 <div class="d-flex justify-content-center flex-column align-items-center" style="margin-top: 1.6rem;">
 
 <div class="card" style="margin: 0!important; width: 45rem !important;">
   <div class="card-body" style="padding: 2rem;">
   <div class="form-row">
     <div class="col">
-       <label>Ingresá el CBU</label>
+       <label>Ingresá el UUID</label>
      
-       <input asp-for="CBU" type="text" class="form-control">
+       <input asp-for="UUID" type="text" class="form-control">
        <label style="margin-top: 2rem;">Ingresá la cantidad a transferir</label>
 
        <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
+            <span class="input-group-text">USD</span>
           </div>
-          <input asp-for="Amount" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="valor" step="any">
         </div>
     </div>
     </div>
@@ -106,9 +88,8 @@ h6{
   </div>
 </div>
 
- <div class="btn">
- <button type="submit" class="submit">Transferir</button>
- </div>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+
 
     @*<div class="button bt">
         <a type="submit" class="a" style="border: 1px solid #000; background: #fff;">Transferir</a>

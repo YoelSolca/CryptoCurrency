@@ -1,48 +1,24 @@
-﻿
+﻿@model UserModel
+
 @{
-    ViewData["Title"] = "Inversiones";
+    ViewData["Title"] = "Vender";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    .btn{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-        .submit  {
-        background: #d8c3a2;
-        padding: 5px;
-        border-radius: 5px;
-        color: #000;
-        font-size: 15px;
-        font-weight: 300;
-        border: none;
-        width: 130px;
-        text-align: center;
-        margin-top: 17px;
-    }
-
-    form{
-        display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-</style>
 
 <form asp-action="Comprar" asp.controller="Cryptocurrency" method="post">
 
-  <div class="card" style="width: 38rem !important; margin-left: 3.1rem !important; margin-top: 5rem !important;">
+  <div class="card" style="width: 58rem !important; margin-left: 3.1rem !important; margin-top: 11rem !important;">
   <div class="card-body">
     <div class="container">
-        <div class="currency">
-        <select id="currency-one">
-          <option value="ARS" selected>ARS</option>
-        </select>
-        <input name="value1" type="number" id="amount-one" placeholder="0"/>
+
+     <div class="currency">
+        <select id="currency-three">
+          <option value="BTC" selected>Bitcoin</option>
+      </select>
+        <input name="value3" type="text" id="amount-three" placeholder="0" step="any"/>
       </div>
+
 
       
       <div class="swap-rate-container">
@@ -64,28 +40,19 @@
       </div>
 
 
-     <div class="currency">
-        <select id="currency-three">
-          <option value="BTC" selected>Bitcoin</option>
-    @*      <option value="ETH">Ethereum</option>
-          <option value="XRP">XRP</option>
-          <option value="USDT">Tether</option>
-          <option value="LINK">Chainlink</option>
-          <option value="HMR">Homeros</option>
-          <option value="BCH">Bitcoin Cash</option>
-          <option value="TITAN">TitanSwap</option>
-          <option value="HEX">HEX</option>
-          <option value="CRO">Crypto.com Coin</option>*@
-      </select>
-        <input name="value3" type="text" id="amount-three" placeholder="0" step="any"/>
+        <div class="currency">
+        <select id="currency-one">
+        <option value="BTC" selected>Bitcoin</option>
+
+          <option value="ARS" selected>ARS</option>
+        </select>
+        <input name="value1" type="number" id="amount-one" placeholder="@Model.AccountCryptocurrencyModel.data" step="any"/>
       </div>
     </div>
   </div>
 </div>
 
- <div class="btn">
- <button type="submit" class="submit">Comprar</button>
- </div>
+ <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
 
@@ -119,6 +86,8 @@ function calculate() {
             rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
 
             amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
+
+            console.log(amountEl_two.value);
         });
 }
 

@@ -50,10 +50,13 @@ namespace CryptoCurrencyMVC.Controllers
 
                 HttpContext.Session.SetString("password", user.Password);
                 HttpContext.Session.SetString("name", oUser.FirstName + " " + oUser.LastName);
-               
+
                 HttpContext.Session.SetString("Amount", oUser.accountPeso.AccountBalance.ToString());
 
+                HttpContext.Session.SetString("Id", oUser.ID.ToString());
+
                 ViewBag.AccountPeso = oUser.accountPeso;
+
                 return RedirectToAction("Index", "Home");
             }
             else

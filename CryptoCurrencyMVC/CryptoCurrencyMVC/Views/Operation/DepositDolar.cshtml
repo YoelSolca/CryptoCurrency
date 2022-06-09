@@ -1,7 +1,7 @@
 ﻿@model UserModel
 
 @{
-    ViewData["Title"] = "Consultar CBU y alias";
+    ViewData["Title"] = "DepositDolar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -41,14 +41,14 @@ text-align: center !important;
 <div class="card" style="margin: 0!important; width: 45rem !important;">
   <div class="card-body" style="padding: 2rem;">
     <p style="margin: 0; text-align:left;">CBU</p>
-    <p style="text-align:left; margin:0;">@Model.accountPeso.CBU</p>
+    <p style="text-align:left; margin:0;">@Model.accountDollar.CBU</p>
   </div>
 </div>
 
 <div class="card" style="margin: 3rem 0 0 0!important; width: 45rem !important;">
   <div class="card-body" style="padding: 2rem;">
       <p style="margin: 0; text-align:left;">Alias</p>
-    <p style="text-align:left; margin:0;">@Model.accountPeso.Alias</p>
+    <p style="text-align:left; margin:0;">@Model.accountDollar.Alias</p>
   </div>
 
 </div>

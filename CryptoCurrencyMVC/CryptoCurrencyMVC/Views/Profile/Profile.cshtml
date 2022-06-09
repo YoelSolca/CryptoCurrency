@@ -1,30 +1,163 @@
-﻿
+﻿@model UserModel
+
 @{
     ViewData["Title"] = "Perfil";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h5>Datos de cuenta</h5>
 
-<section class="container">
-    <div class="row justify-content-sm-around">
-            <div class="col-md-6">
-                <div class="card text-left">
-              <div class="card-body">
-                
+<style>
+    .modificar {
+   color: #000;
+   text-decoration: none;
+}
 
-                </div>
-      </div>
+.card-footer:hover{
+    background: #c59d5f;
+    transition: all .5s
+}
+
+.modificar:hover{
+    color:#000 !important;
+}
+
+h6{
+text-align: left !important;
+    width: 70% !important;
+    color: #000 !important;
+    font-size: 16px;
+    margin-top: 3rem;
+}
+
+.form-control:focus {
+        border-color: #c59d5f;
+        box-shadow: none !important;
+    } 
+
+    form{
+            display: flex;
+    justify-content: space-evenly;
+    margin: 9rem 0 0 0;
+    flex-wrap: wrap;
+    }
+
+    button{
+        width: 50%;
+    }
+
+    form{
+     display: flex;
+    justify-content: center;
+    margin: 9rem 0 0 0;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    }
+
+     .btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+        .submit  {
+        background: #d8c3a2;
+        padding: 5px;
+        border-radius: 5px;
+        color: #000;
+        font-size: 15px;
+        font-weight: 300;
+        border: none;
+        width: 130px;
+        text-align: center;
+        margin-top: 17px;
+    }
+    }
+</style>
+
+
+
+ <form asp-action="Profile" asp-controller="Profile" method="post">
+
+
+@*<div class="card" style="margin: 0!important;">
+  <div class="card-body" style="padding: 2rem;">
+  <div class="form-row">
+    <div class="col">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" style="width: 218px;">
     </div>
+  </div>
+  <div class="form-row">
+    <div class="col" style="margin-top: 1rem;">
+    <label for="inputPassword3" class="col-sm-2 col-form-label" style="width: 100%;">Password</label>
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" style="width: 218px;">
+    </div>
+  </div>
+  </div>
+</div>*@
 
-    <h5>Datos personales</h5>
 
-     <div class="col-md-6">
-             <div class="card text-left">
-              <div class="card-body body">
-              </div>
-            </div>
-            </div>
-     </div>
+<div class="card" style="margin: 0!important; width:45rem !important;">
+  <div class="card-body" style="padding: 2rem;">
+    
+      <div class="form-row" style="display:flex; justify-content: space-around">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer01">Nombre</label>
+      <input asp-for="FirstName" type="text" class="form-control" id="validationServer01">
+       <span asp-validation-for="FirstName" class="text-danger"></span>
 
-</section>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Apellido</label>
+      <input asp-for="LastName" type="text" class="form-control" id="validationServer02">
+             <span asp-validation-for="LastName" class="text-danger"></span>
+
+    </div>
+  </div>
+
+        <div class="form-row" style="display:flex; justify-content: space-around">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer01">Telefono</label>
+      <input asp-for="Phone" type="number" class="form-control" id="validationServer01">
+      <span asp-validation-for="Phone" class="text-danger"></span>
+
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Domicilio</label>
+      <input asp-for="Address" type="text" class="form-control" id="validationServer02">
+       <span asp-validation-for="Address" class="text-danger"></span>
+
+    </div>
+  </div>
+
+        <div class="form-row" style="display:flex; justify-content: space-around">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer01">Genero</label>
+      <input asp-for="Gender" type="text" class="form-control" id="validationServer01">
+       <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer02">Fecha de nacimiento</label>
+      <input asp-for="Birthdate" type="date" class="form-control" id="validationServer02"> 
+       <span asp-validation-for="Birthdate" class="text-danger"></span>
+    </div>
+  </div>
+
+        <div class="form-row" style="margin-left: 3.4rem;">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer01">Provincia</label>
+      <input  asp-for="LocationName" type="text" class="form-control" id="validationServer01"  style="width: 13.7rem;">
+      <span asp-validation-for="LocationName" class="text-danger"></span>
+    </div>
+  </div>
+
+  </div>
+</div> 
+ <div class="btn">
+ <button type="submit" class="submit">Editar</button>
+ </div>
+</form>
+
+
+

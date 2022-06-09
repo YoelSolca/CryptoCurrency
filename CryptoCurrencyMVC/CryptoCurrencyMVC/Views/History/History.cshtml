@@ -9,12 +9,21 @@
   <div style="margin-top: 2.1rem; display: flex;
     justify-content: center;
     align-items: center;">
-<div class="card" style="width: 45rem !important; margin-left: 0 !important; margin-top: 3rem !important;">
+<div class="card" style="width: 35rem !important; margin-left: 0 !important; margin-top: 3rem !important;">
   @if(@ViewBag.Operations != null)
    @foreach (var item in @ViewBag.Operations)
    {
-      <div class="card-body">
-          <p>@item.Title</p>
+      <div class="card-body" style="display:flex; justify-content:space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <img src="@item.Icon" width="40">
+          <p style="margin: 0 0 0 15px !important;">@item.Title</p>
+            </div>
+          
+          
+          <div style="display: flex; flex-direction: column;">
+          <p style="margin:0 !important; font-size: 12px;">@item.Amount</p>
+          <p style="margin:0 !important;  font-size: 12px;">@item.Date.ToString("dd/MM/yyyy")</p>
+          </div>
       </div>
  }
 </div>
