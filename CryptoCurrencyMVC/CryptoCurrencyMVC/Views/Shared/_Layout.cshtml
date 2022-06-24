@@ -27,42 +27,50 @@
 
     <header>
 
-@*        <h6>@HttpContextAccessor.HttpContext.Session.GetString("name")</h6>
-*@
+            <h6 class="d-flex align-items-center">
+            <i class="bi bi-person-circle" style="font-size: 22px; margin-right: 9px;"></i>Bienvenido, @HttpContextAccessor.HttpContext.Session.GetString("name")
+            </h6>
+
         <nav class="navbar">
 
-                    <a class="bi bi-house" asp-area="" asp-controller="Home" asp-action="Index">Inicio </a>
-                    <a class="bi bi-house" asp-area="" asp-controller="Profile" asp-action="Profile">Tu perfil </a>
+            <div style="display: flex; flex-direction: column; border-bottom: 1px solid #fff;width: 100%; text-align: left; margin-top:1rem;">
+            <i class="bi bi-house" >
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Inicio </a>
+            </i>
+                   
+                     <i class="bi bi-person">
+                    <a  asp-area="" asp-controller="Profile" asp-action="Profile">Tu perfil </a>
+                    </i>
+            </div>
 
-                    <a class="bi bi-house" asp-area="" asp-controller="Cryptocurrency" asp-action="List">Criptomonedas</a>
+            <div style="display: flex; flex-direction: column; border-bottom: 1px solid #fff;width: 100%; text-align: left; margin-top:1rem;">
 
-                    <a class="bi bi-house" asp-area="" asp-controller="Cryptocurrency" asp-action="Comprar">Inversiones</a>
-                    <a class="bi bi-house" asp-area="" asp-controller="Cryptocurrency" asp-action="Venta">Inversiones</a>
+                    <i class="bi bi-currency-bitcoin">
+                    <a  asp-area="" asp-controller="Cryptocurrency" asp-action="List">Criptomonedas</a>
+                    </i>
 
-                    <a class="bi bi-house" asp-area="" asp-controller="Home" asp-action="Index">Tu dinero </a>
-                    <a class="bi bi-house" asp-area="" asp-controller="History" asp-action="History">Actividad </a>
-                    <a class="bi bi-house" asp-area="" asp-controller="Login" asp-action="Logout">Salir </a>
+                    <i class="bi bi-clipboard-data">
+                    <a  asp-area="" asp-controller="Cryptocurrency" asp-action="Buy">Inversiones</a>
+                    </i>
+                   
+                     <i class="bi bi-cash">
+                    <a asp-area="" asp-controller="Cryptocurrency" asp-action="SellPeso">Pesos</a>
+                    </i>
+                 
+                      <i class="bi bi-currency-dollar">
+                    <a asp-area="" asp-controller="Cryptocurrency" asp-action="SellDollar" style="position: relative; right: 6px;">Dolares</a>
+                    </i>
+
+                     <i class="bi bi-clipboard2">
+                    <a asp-area="" asp-controller="History" asp-action="History">Actividad </a>
+                    </i>
+
+             </div>
 
 
-         @*   <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="https://i.imgur.com/A75CeRH.png" width="50"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-           </div>*@
+                    <i class="bi bi-box-arrow-right" style="margin-top: 1rem;">
+                         <a asp-area="" asp-controller="Login" asp-action="Logout">Salir </a>
+                    </i>
         </nav>
 
     </header>
@@ -81,11 +89,6 @@
         </main>
     </div>
 
-    @*<footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - CryptoCurrencyMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -1,0 +1,40 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExtractionModal</title>
+</head>
+<body>
+
+
+ <div class="container" style=" margin-top: 7rem !important;
+    width: 32% !important;">
+        <div class="col-sm-4"></div>
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="right: 3rem !important; width: 32rem !important;">
+        <div class="modal-header" style="background: #222; color: #000 !important;">
+            <h6 style="margin-bottom: 0!important; text-align: center; width: 100%;">Extraer dinero</h6>
+        </div>
+        <div class="modal-body">
+            <p>Accercate a algun operador de Pago fácil y decile que tiene que ingresar tu dni y tambien tu token</p>
+            <p>
+                TOKEN:  @ViewBag.token
+            </p>
+        </div>
+        <div class="modal-footer" style="justify-content: center !important;">
+           <a type="submit" asp-action="Index" asp-controller="Home"  style="background: #d8c3a2;text-decoration: none;color: #000;padding: 8px;border-radius: 5px;" >Volver al Home</a>
+       </div>
+      </div>
+    </div>
+        </div>
+</body>
+</html>

@@ -50,7 +50,7 @@
 
         <div class="button">
         <a asp-area="" asp-controller="Operation" asp-action="DepositPeso">Ingresar dinero</a>
-        <a asp-area="" asp-controller="Operation" asp-action="Transfer">Transferir dinero</a>
+        <a asp-area="" asp-controller="Operation" asp-action="TransferPeso">Transferir dinero</a>
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@
                 
 
                 <div class="button">
-                <a asp-area="" asp-controller="Operation" asp-action="DepositDolar">Ingresar dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="DepositDollar">Ingresar dinero</a>
                 <a asp-area="" asp-controller="Operation" asp-action="TransferDollar">Transferir dinero</a>
                 </div>
               </div>
@@ -108,8 +108,8 @@
                 </div>
 
                 <div class="button">
-                <a asp-area="" asp-controller="Operation" asp-action="DepositCrypto">Ingresar dinero</a>
-                <a asp-area="" asp-controller="Operation" asp-action="TransferCrypto">Transferir dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="DepositCryptocurrency">Ingresar dinero</a>
+                <a asp-area="" asp-controller="Operation" asp-action="TransferCryptocurrency">Transferir dinero</a>
                 </div>
               </div>
             </div>
@@ -129,9 +129,8 @@
           <img src="@item.Icon" width="40">
           <p style="margin:0 !important;">@item.Title</p>
           
-          
           <div style="display: flex; flex-direction: column;">
-          <p style="margin:0 !important; font-size: 12px;">@item.Amount</p>
+          <p style="margin:0 !important; font-size: 12px;">@item.Money @item.Amount</p>
           <p style="margin:0 !important;  font-size: 12px;">@item.Date.ToString("dd/MM/yyyy")</p>
           </div>
       </div>

@@ -9,7 +9,7 @@
         public int FK_Transfer { get; set; }
         public int FK_Deposit { get; set; }
         public int FK_Investment { get; set; }
-
+        public string Money { get; set; }
         public UserModel User { get; set; }
         public ExtractionModel Extraction { get; set; }
         public TransferModel Transfer { get; set; }

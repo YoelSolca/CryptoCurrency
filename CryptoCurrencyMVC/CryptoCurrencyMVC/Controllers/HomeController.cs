@@ -6,44 +6,33 @@ namespace CryptoCurrencyMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         UserData userData = new UserData();
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        HistoryData historyData = new HistoryData();
 
         public IActionResult Index()
         {
             ViewBag.email = HttpContext.Session.GetString("email");
             ViewBag.password = HttpContext.Session.GetString("password");
 
+
             if(ViewBag.email == null && ViewBag.password == null)
             {
                 return RedirectToAction("Login", "Login");
             }
 
-            var oUser = userData.ObtenerUsuario(ViewBag.email, ViewBag.password);
+            //Obtener usuario por Id
+            ViewBag.Id = HttpContext.Session.GetString("Id");
+            var oUser = userData.GetUser(Convert.ToInt32(ViewBag.Id));
 
-            ViewBag.data = oUser.AccountCryptocurrencyModel.data;
 
-            var oList = userData.Movements(oUser.ID);
+            ViewBag.data = oUser.AccountCryptocurrencyModel.Data;
+
+            var oList = historyData.Movements(oUser.ID);
 
             ViewBag.Operations = oList;
 
             return View(oUser);
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    
     }
 }

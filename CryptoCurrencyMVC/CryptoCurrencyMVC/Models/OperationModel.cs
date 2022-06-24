@@ -16,6 +16,8 @@
         public string CBU { get; set; }
         
         public string Icon { get; set; }
+
+        public string Money { get; set; }
     
     }
 }

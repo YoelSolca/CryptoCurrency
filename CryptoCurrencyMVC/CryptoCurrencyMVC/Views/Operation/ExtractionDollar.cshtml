@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewData["Title"] = "Extracciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .modificar {
+   color: #000;
+   text-decoration: none;
+}
+
+.card-footer:hover{
+    background: #c59d5f;
+    transition: all .5s
+}
+
+.modificar:hover{
+    color:#000 !important;
+}
+
+
+.form-control:focus {
+        border-color: #c59d5f;
+        box-shadow: none !important;
+    } 
+
+
+.bt{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 17px;
+    margin-top: 1rem;
+    margin-right: 10.1rem;
+}
+
+ .a:hover{
+   background: #c59d5f !important;
+   color: #fff;
+   transition: all .5s;
+   border: 1px solid #f6f5f7 !important;
+}
+
+   .btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+        .submit  {
+        background: #d8c3a2;
+        padding: 5px;
+        border-radius: 5px;
+        color: #000;
+        font-size: 15px;
+        font-weight: 300;
+        border: none;
+        width: 130px;
+        text-align: center;
+        margin-top: 17px;
+    }
+    .AddAccountTitle{
+    text-align: left;
+    color: #000;
+    margin-top: 8rem;
+    margin-left: 10.1rem;
+    margin-bottom: 0 !important;
+}
+
+
+
+    </style>
+
+
+    
+
+<h6 class="AddAccountTitle">
+       <label>Ingresá la cantidad a extraer</label>
+</h6>
+
+
+<div class="d-flex justify-content-center flex-column align-items-center" style="margin-top: 1.6rem;">
+
+<div class="card" style="margin: 0!important; width: 45rem !important;">
+  <div class="card-body" style="padding: 2rem;">
+  <div class="form-row">
+ <div class="col">
+       <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">USD</span>
+          </div>
+          <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="value" step="any" min="0">
+        <div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+ <div class="btn">
+ <button type="submit" class="submit" onclick="Details()">Confirmar</button>
+ </div>
+
+
+
+        <div class="modal fade" id="myModal" role="dialog">
+   
+     <div class="modal-dialog">
+      <div>
+        <div>
+        </div>
+            </div>
+            <div class="modal-body">
+
+            </div>
+          
+        </div>
+    </div>
+<script>
+    function Details() {
+    $.get("@Url.Action("ExtractionModal", "Operation")/",
+
+        function(data) { $('.modal-body').html(data);
+        })
+    $('#myModal').modal('show');
+}
+
+</script>

@@ -2,6 +2,5 @@
 {
     public class ExtractionModel:OperationModel
     {
-        public string Entity { get; set; }
     }
 }
